@@ -5,20 +5,20 @@ import {
 } from "react-router-dom";
 import Home from './Home'
 import './App.css'
-import Head from './components/Header'
 import ThreadsNew from "./ThreadsNew";
+import ThreadDateil from "./ThreadDateil";
 
 function App() {
 
   return (
     <>
-    <BrowserRouter>
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='/threads/new' element={<ThreadsNew/>}/>
-    </Routes>
-    </BrowserRouter>
-      
+      <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>}/>
+        <Route path='/threads/new' element={<ThreadsNew/>}/>
+        <Route path='/threads/:thread_id' element={<ThreadDateil/>}/>
+      </Routes>
+      </BrowserRouter>
     </>
   )
 }
