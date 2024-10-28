@@ -1,15 +1,24 @@
-import { useState } from 'react'
-import Header from './components/Header'
-import Thread from './components/Thread'
-
+import {
+  BrowserRouter,
+  Route,
+  Routes
+} from "react-router-dom";
+import Home from './Home'
 import './App.css'
+import Head from './components/Header'
+import ThreadsNew from "./ThreadsNew";
 
 function App() {
 
   return (
     <>
-      <Header />
-      <Thread />
+    <BrowserRouter>
+    <Routes>
+      <Route path='/' element={<Home/>}/>
+      <Route path='/threads/new' element={<ThreadsNew/>}/>
+    </Routes>
+    </BrowserRouter>
+      
     </>
   )
 }
