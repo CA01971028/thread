@@ -28,8 +28,8 @@ const Card = () => {
                 <div className="text-red-500">エラー: サーバーサイトのエラーです</div>
             ) : (
                 data.map((thread) => (
-                    <Link to={`/threads/${thread.id}`}>
-                        <div key={thread.id} className="bg-white sm:h-auto md:h-20 w-2/4 mx-auto rounded-lg mb-4 p-4 hover:bg-blue-500">
+                    <Link key={thread.id} to={`/threads/${thread.id}`}>
+                        <div className="bg-white sm:h-auto md:h-20 w-2/4 mx-auto rounded-lg mb-4 p-4 hover:bg-blue-500">
                             <div>{thread.title}</div>
                         </div>
                     </Link>

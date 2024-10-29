@@ -13,9 +13,9 @@ const NewThread = () => {
             const response = await fetch('https://railway.bulletinboard.techtrain.dev/threads', {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/json', // リクエストのコンテンツタイプ
+                    'Content-Type': 'application/json', 
                 },
-                body: JSON.stringify({ title: inputValue }), // JSON形式でボディを設定
+                body: JSON.stringify({ title: inputValue }),
             });
 
             if (!response.ok) {
@@ -26,7 +26,7 @@ const NewThread = () => {
 
             const result = await response.json();
             alert(`スレッドが作成されました！ ID: ${result.id}, タイトル: ${result.title}`);
-            setInputValue(''); // フィールドをクリアする
+            setInputValue(''); 
         } catch (error) {
             console.error('エラーが発生しました:', error);
             alert('サーバーエラーが発生しました。');
@@ -45,12 +45,14 @@ const NewThread = () => {
                 className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-10 mb-36" 
                 onClick={submit}>
                 追加
-            </button><br />
-            <a href="/"><button 
+            </button>
+            <div className="pb-32">
+                <a href="/"><button 
                 className="bg-blue-500 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50 mt-3" 
                 > 
                 戻る
-            </button></a>
+                </button></a>
+            </div>
        </>
     );
 };
