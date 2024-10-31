@@ -84,7 +84,7 @@ const ThreadDetail = () => {
         <div>
             <Header />
             <div className="min-w-max min-h-lvh bg-slate-200 p-4">
-                <div className="text-4xl pl-10">{title[0] || 'タイトルが見つかりませんでした'}</div>
+                <div className="text-4xl pl-10">{title}</div>
                 <div className='md:flex md:flex-row-reverse'>
                     <div className='md:basis-11/12'>
                         <input
@@ -102,9 +102,11 @@ const ThreadDetail = () => {
                     
                     <div className='md:basis-11/12'>
                         {serch.map((post) => (
-                            <div key={post.id} className="bg-white h-16 w-2/4 mx-auto md:h-auto text-center text-3xl my-3 py-3">
-                                {post.post}
-                            </div>
+                            post.post !== '' && (
+                                <div key={post.id} className="bg-white h-auto w-2/4 mx-auto md:h-auto text-center text-3xl my-3 py-3">
+                                    {post.post}
+                                </div>
+                            )
                         ))}
                     </div>
                 </div>
