@@ -39,22 +39,22 @@ const ThreadDetail = () => {
         }
     }
 
-    useEffect(() => {
-        const fetchData = async () => {
-            try {
-                const res = await fetch('https://railway.bulletinboard.techtrain.dev/threads');
-                if (!res.ok) {
-                    throw new Error('Network response was not ok');
-                }
-                const result = await res.json();
-                setData(result);
-            } catch (err) {
-                console.log('サーバーサイドでエラーが発生しています', err);
-                setError(err);
-            }
-        };
-        fetchData();
-    }, []);
+    // useEffect(() => {
+    //     const fetchData = async () => {
+    //         try {
+    //             const res = await fetch('https://railway.bulletinboard.techtrain.dev/threads');
+    //             if (!res.ok) {
+    //                 throw new Error('Network response was not ok');
+    //             }
+    //             const result = await res.json();
+    //             setData(result);
+    //         } catch (err) {
+    //             console.log('サーバーサイドでエラーが発生しています', err);
+    //             setError(err);
+    //         }
+    //     };
+    //     fetchData();
+    // }, []);
 
     useEffect(() => {
         const fetchData = async () => {
